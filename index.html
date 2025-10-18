@@ -1,176 +1,201 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Get your ID</title>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1964833684058201');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1964833684058201&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Get your ID</title>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1964833684058201');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1964833684058201&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html, body {
-      height: 100%;
-      width: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow: hidden;
-    }
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
 
-    /* Background Video */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1;
-    }
+        /* 🔹 Background Image (Responsive + Zoom Animation) */
+        .bg-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            /* black border agar image small ho */
+        }
 
-    .video-bg video {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      object-fit: contain;
-      background-color: black;
-    }
+        .bg-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* cut hone se bachaata hai */
+            max-width: 100%;
+            max-height: 100%;
+            transform: scale(1);
+            animation: zoom-pulse 0.6s infinite alternate ease-in-out;
+        }
 
-    /* WhatsApp Button */
-    .btn-whatsapp {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 16px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      background: #25D366;
-      color: #fff;
-      font-size: 20px;
-      box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
-      z-index: 10;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      animation: bubble-pulse 0.6s infinite alternate ease-in-out;
-      display: flex;              /* text ko center lane ke liye */
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+        @keyframes zoom-pulse {
+            0% {
+                transform: scale(1);
+            }
 
-    /* On Hover - interactive bounce */
-    .btn-whatsapp:hover {
-      background: #1DA851;
-      transform: translateX(-50%) scale(1.2);
-      box-shadow: 0 0 30px rgba(37, 211, 102, 1);
-    }
+            50% {
+                transform: scale(1.15);
+            }
 
-    /* Bubble + Pulsing Effect */
-    @keyframes bubble-pulse {
-      0% {
-        transform: translateX(-50%) scale(1);
-        box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
-      }
-      50% {
-        transform: translateX(-50%) scale(1.15);
-        box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
-      }
-      100% {
-        transform: translateX(-50%) scale(1.25);
-        box-shadow: 0 0 35px rgba(37, 211, 102, 1);
-      }
-    }
+            100% {
+                transform: scale(1.25);
+            }
+        }
 
-    .bubble {
-      position: fixed;
-      bottom: 40px;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background: rgba(37, 211, 102, 0.5);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: rise 1.2s ease-out forwards;
-    }
+        /* WhatsApp Button */
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 16px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            background: #25D366;
+            color: #fff;
+            font-size: 20px;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
+            z-index: 10;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            animation: bubble-pulse 0.6s infinite alternate ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-    @keyframes rise {
-      0% {
-        transform: translate(-50%, 0) scale(1);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translate(-50%, -120px) scale(0);
-        opacity: 0;
-      }
-    }
+        .btn-whatsapp:hover {
+            background: #1DA851;
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 1);
+        }
 
-    /* ✅ Mobile Responsive Fix */
-    @media (max-width: 480px) {
-      .btn-whatsapp {
-        font-size: 18px;       /* thoda chhota text */
-        padding: 14px 20px;    /* mobile me better fit */
-        width: 80%;            /* center me barabar */
-      }
-    }
-  </style>
+        @keyframes bubble-pulse {
+            0% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+            }
+
+            50% {
+                transform: translateX(-50%) scale(1.15);
+                box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
+            }
+
+            100% {
+                transform: translateX(-50%) scale(1.25);
+                box-shadow: 0 0 35px rgba(37, 211, 102, 1);
+            }
+        }
+
+        .bubble {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: rgba(37, 211, 102, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: rise 1.2s ease-out forwards;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translate(-50%, 0) scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translate(-50%, -120px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* 📱 Mobile Responsive Fix */
+        @media (max-width: 480px) {
+            .btn-whatsapp {
+                font-size: 18px;
+                padding: 14px 20px;
+                width: 80%;
+            }
+
+            .bg-img img {
+                object-fit: contain;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Background Video -->
-  <div class="video-bg">
-    <video autoplay loop muted playsinline>
-      <source src="lv_0_20250918185057.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+    <!-- ✅ Background Image -->
+    <div class="bg-img">
+        <img src="imind.jpg" alt="Background">
+    </div>
 
-  <!-- WhatsApp Button -->
-  <a id="waBtn" class="btn-whatsapp" href="https://wa.link/promotionclub2" target="_blank">
-    WhatsApp Now
-  </a>
+    <!-- WhatsApp Button -->
+    <a id="waBtn" class="btn-whatsapp" href="https://wa.link/promotionclub2" target="_blank">
+        WhatsApp Now
+    </a>
 
-  <script>
-    // Bubble Effect Generator
-    const btn = document.getElementById('waBtn');
-    btn.addEventListener('mouseenter', () => {
-      for (let i = 0; i < 5; i++) {
-        createBubble();
-      }
-    });
+    <script>
+        // Bubble Effect Generator
+        const btn = document.getElementById('waBtn');
+        btn.addEventListener('mouseenter', () => {
+            for (let i = 0; i < 5; i++) {
+                createBubble();
+            }
+        });
 
-    function createBubble() {
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
-      const size = Math.random() * 20 + 10;
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
-      bubble.style.left = `${50 + (Math.random() * 30 - 15)}%`;
-      document.body.appendChild(bubble);
-      setTimeout(() => bubble.remove(), 1200);
-    }
-  </script>
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 20 + 10;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = `${50 + (Math.random() * 30 - 15)}%`;
+            document.body.appendChild(bubble);
+            setTimeout(() => bubble.remove(), 1200);
+        }
+    </script>
 </body>
-</html>
 
+</html>
