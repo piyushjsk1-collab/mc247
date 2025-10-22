@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Get your ID</title>
-    <!-- Meta Pixel Code -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Get your ID</title>
+
+  <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
@@ -24,178 +25,200 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1964833684058201&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        html,
-        body {
-            height: 100%;
-            width: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-            overflow: hidden;
-        }
+  <!-- ✅ Font Awesome for icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-        /* 🔹 Background Image (Responsive + Zoom Animation) */
-        .bg-img {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            /* black border agar image small ho */
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .bg-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            /* cut hone se bachaata hai */
-            max-width: 100%;
-            max-height: 100%;
-            transform: scale(1);
-            animation: zoom-pulse 0.6s infinite alternate ease-in-out;
-        }
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
+    }
 
-        @keyframes zoom-pulse {
-            0% {
-                transform: scale(1);
-            }
+    /* ✅ Static Background Image */
+    .bg-img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
 
-            50% {
-                transform: scale(1.15);
-            }
+    .bg-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+    }
 
-            100% {
-                transform: scale(1.25);
-            }
-        }
+    /* ✅ WhatsApp Button Style */
+    
+    
+    /* ✅ Top Button Position */
+.top-btn {
+    top: 10%;
+    /* 👆 is value ko kam ya zyada karke button ko aap center top me rakh sakte ho */
+    bottom: auto;
+}
 
-        /* WhatsApp Button */
-        .btn-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 16px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            background: #25D366;
-            color: #fff;
-            font-size: 20px;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
-            z-index: 10;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            animation: bubble-pulse 0.6s infinite alternate ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+/* ✅ Bottom Button Position */
+.bottom-btn {
+    bottom: 10%;
+}
 
-        .btn-whatsapp:hover {
-            background: #1DA851;
-            transform: translateX(-50%) scale(1.2);
-            box-shadow: 0 0 30px rgba(37, 211, 102, 1);
-        }
+/* ✅ Common WhatsApp Button Style */
+.btn-whatsapp {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    background: #25D366;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    animation: bubble-pulse 0.6s infinite alternate ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
-        @keyframes bubble-pulse {
-            0% {
-                transform: translateX(-50%) scale(1);
-                box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
-            }
+.btn-whatsapp:hover {
+    background: #1DA851;
+    transform: translateX(-50%) scale(1.2);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 1);
+}
 
-            50% {
-                transform: translateX(-50%) scale(1.15);
-                box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
-            }
 
-            100% {
-                transform: translateX(-50%) scale(1.25);
-                box-shadow: 0 0 35px rgba(37, 211, 102, 1);
-            }
-        }
+    .btn-whatsapp i {
+      font-size: 22px;
+    }
 
-        .bubble {
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            background: rgba(37, 211, 102, 0.5);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: rise 1.2s ease-out forwards;
-        }
+    @keyframes bubble-pulse {
+      0% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+      }
 
-        @keyframes rise {
-            0% {
-                transform: translate(-50%, 0) scale(1);
-                opacity: 0.8;
-            }
+      50% {
+        transform: translateX(-50%) scale(1.15);
+        box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
+      }
 
-            100% {
-                transform: translate(-50%, -120px) scale(0);
-                opacity: 0;
-            }
-        }
+      100% {
+        transform: translateX(-50%) scale(1.25);
+        box-shadow: 0 0 35px rgba(37, 211, 102, 1);
+      }
+    }
 
-        /* 📱 Mobile Responsive Fix */
-        @media (max-width: 480px) {
-            .btn-whatsapp {
-                font-size: 18px;
-                padding: 14px 20px;
-                width: 80%;
-            }
+    .bubble {
+      position: fixed;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: rgba(37, 211, 102, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: rise 1.2s ease-out forwards;
+    }
 
-            .bg-img img {
-                object-fit: contain;
-            }
-        }
-    </style>
+    @keyframes rise {
+      0% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translate(-50%, -120px) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* 📱 Mobile Responsive */
+    @media (max-width: 480px) {
+      .btn-whatsapp {
+        font-size: 18px;
+        padding: 14px 20px;
+        width: 80%;
+      }
+
+      .btn-whatsapp i {
+        font-size: 20px;
+      }
+
+      .bg-img img {
+        object-fit: contain;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- ✅ Background Image -->
-    <div class="bg-img">
-        <img src="imind.jpg" alt="Background">
-    </div>
+  <!-- ✅ Top WhatsApp Button -->
+<a class="btn-whatsapp top-btn" href="https://wa.link/promotionclub2" target="_blank">
+    WhatsApp Now
+</a>
 
-    <!-- WhatsApp Button -->
-    <a id="waBtn" class="btn-whatsapp" href="https://wa.link/promotionclub2" target="_blank">
-        WhatsApp Now
-    </a>
+<!-- ✅ Background Image -->
+<div class="bg-img">
+    <img src="imind.jpg" alt="Background">
+</div>
 
-    <script>
-        // Bubble Effect Generator
-        const btn = document.getElementById('waBtn');
-        btn.addEventListener('mouseenter', () => {
-            for (let i = 0; i < 5; i++) {
-                createBubble();
-            }
-        });
+<!-- ✅ Bottom WhatsApp Button -->
+<a class="btn-whatsapp bottom-btn" href="https://wa.link/promotionclub2" target="_blank">
+    WhatsApp Now
+</a>
 
-        function createBubble() {
-            const bubble = document.createElement('div');
-            bubble.classList.add('bubble');
-            const size = Math.random() * 20 + 10;
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-            bubble.style.left = `${50 + (Math.random() * 30 - 15)}%`;
-            document.body.appendChild(bubble);
-            setTimeout(() => bubble.remove(), 1200);
+
+  <script>
+    // 🎈 Bubble Effect Generator
+    const buttons = document.querySelectorAll('.btn-whatsapp');
+    buttons.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        for (let i = 0; i < 5; i++) {
+          createBubble(btn.classList.contains('btn-top') ? 'down' : 'up');
         }
-    </script>
+      });
+    });
+
+    function createBubble(direction) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      const size = Math.random() * 20 + 10;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${50 + (Math.random() * 30 - 15)}%`;
+      if (direction === 'down') {
+        bubble.style.top = '70px';
+        bubble.style.animation = 'rise 1.2s ease-in forwards reverse';
+      } else {
+        bubble.style.bottom = '40px';
+      }
+      document.body.appendChild(bubble);
+      setTimeout(() => bubble.remove(), 1200);
+    }
+  </script>
 </body>
 
 </html>
